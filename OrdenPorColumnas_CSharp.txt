@@ -1,0 +1,54 @@
+using System;
+
+/*
+ * Tarea: Orden por columnas de matriz 2D (C#)
+ * Cada columna se ordena de forma ascendente de manera independiente.
+ */
+class OrdenPorColumnas
+{
+    static void Main(string[] args)
+    {
+        int[,] matriz = {
+            {8, 3, 5},
+            {1, 9, 2},
+            {7, 4, 6}
+        };
+
+        Console.WriteLine("Matriz original:");
+        ImprimirMatriz(matriz);
+
+        int filas = matriz.GetLength(0);
+        int columnas = matriz.GetLength(1);
+
+        for (int col = 0; col < columnas; col++)
+        {
+            int[] columnaTemp = new int[filas];
+            for (int fila = 0; fila < filas; fila++)
+            {
+                columnaTemp[fila] = matriz[fila, col];
+            }
+            Array.Sort(columnaTemp);
+            for (int fila = 0; fila < filas; fila++)
+            {
+                matriz[fila, col] = columnaTemp[fila];
+            }
+        }
+
+        Console.WriteLine("\nMatriz ordenada por columnas:");
+        ImprimirMatriz(matriz);
+    }
+
+    static void ImprimirMatriz(int[,] matriz)
+    {
+        int filas = matriz.GetLength(0);
+        int columnas = matriz.GetLength(1);
+        for (int fila = 0; fila < filas; fila++)
+        {
+            for (int col = 0; col < columnas; col++)
+            {
+                Console.Write(matriz[fila, col] + "\t");
+            }
+            Console.WriteLine();
+        }
+    }
+}

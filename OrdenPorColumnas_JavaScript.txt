@@ -1,0 +1,37 @@
+/*
+ * Tarea: Orden por columnas de matriz 2D (JavaScript)
+ * Cada columna se ordena de forma ascendente de manera independiente.
+ * Ejecutar con: node orden_por_columnas.js
+ */
+
+function imprimirMatriz(matriz) {
+    for (let fila = 0; fila < matriz.length; fila++) {
+        console.log(matriz[fila].join("\t"));
+    }
+}
+
+const matriz = [
+    [8, 3, 5],
+    [1, 9, 2],
+    [7, 4, 6]
+];
+
+console.log("Matriz original:");
+imprimirMatriz(matriz);
+
+const filas = matriz.length;
+const columnas = matriz[0].length;
+
+for (let col = 0; col < columnas; col++) {
+    let columna = [];
+    for (let fila = 0; fila < filas; fila++) {
+        columna.push(matriz[fila][col]);
+    }
+    columna.sort((a, b) => a - b);
+    for (let fila = 0; fila < filas; fila++) {
+        matriz[fila][col] = columna[fila];
+    }
+}
+
+console.log("\nMatriz ordenada por columnas:");
+imprimirMatriz(matriz);

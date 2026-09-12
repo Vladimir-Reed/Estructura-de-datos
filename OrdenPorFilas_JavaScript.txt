@@ -1,0 +1,27 @@
+/*
+ * Tarea: Orden por filas de matriz 2D (JavaScript)
+ * Cada fila se ordena de forma ascendente de manera independiente.
+ * Ejecutar con: node orden_por_filas.js
+ */
+
+function imprimirMatriz(matriz) {
+    for (let fila = 0; fila < matriz.length; fila++) {
+        console.log(matriz[fila].join("\t"));
+    }
+}
+
+const matriz = [
+    [8, 3, 5],
+    [1, 9, 2],
+    [7, 4, 6]
+];
+
+console.log("Matriz original:");
+imprimirMatriz(matriz);
+
+for (let fila = 0; fila < matriz.length; fila++) {
+    matriz[fila].sort((a, b) => a - b);
+}
+
+console.log("\nMatriz ordenada por filas:");
+imprimirMatriz(matriz);

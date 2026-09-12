@@ -1,0 +1,19 @@
+/*
+ * Tarea: Recorrido de matriz 2D (JavaScript)
+ * Ejecutar con: node recorrido_matriz_2d.js
+ */
+
+const matriz = [
+    [8, 3, 5],
+    [1, 9, 2],
+    [7, 4, 6]
+];
+
+console.log("Matriz 2D:");
+for (let fila = 0; fila < matriz.length; fila++) {
+    let linea = "";
+    for (let col = 0; col < matriz[fila].length; col++) {
+        linea += matriz[fila][col] + "\t";
+    }
+    console.log(linea);
+}

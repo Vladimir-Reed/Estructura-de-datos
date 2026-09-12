@@ -1,0 +1,22 @@
+/*
+ * Tarea: Recorrido de matriz 3D (JavaScript)
+ * Ejecutar con: node recorrido_matriz_3d.js
+ */
+
+const matriz = [
+    [
+        [1, 2],
+        [3, 4]
+    ],
+    [
+        [5, 6],
+        [7, 8]
+    ]
+];
+
+for (let capa = 0; capa < matriz.length; capa++) {
+    console.log(`Capa ${capa}:`);
+    for (let fila = 0; fila < matriz[capa].length; fila++) {
+        console.log(matriz[capa][fila].join("\t"));
+    }
+}

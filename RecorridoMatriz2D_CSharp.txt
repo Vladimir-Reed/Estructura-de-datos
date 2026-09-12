@@ -1,0 +1,29 @@
+using System;
+
+/*
+ * Tarea: Recorrido de matriz 2D (C#)
+ */
+class RecorridoMatriz2D
+{
+    static void Main(string[] args)
+    {
+        int[,] matriz = {
+            {8, 3, 5},
+            {1, 9, 2},
+            {7, 4, 6}
+        };
+
+        Console.WriteLine("Matriz 2D:");
+        int filas = matriz.GetLength(0);
+        int columnas = matriz.GetLength(1);
+
+        for (int fila = 0; fila < filas; fila++)
+        {
+            for (int col = 0; col < columnas; col++)
+            {
+                Console.Write(matriz[fila, col] + "\t");
+            }
+            Console.WriteLine();
+        }
+    }
+}
